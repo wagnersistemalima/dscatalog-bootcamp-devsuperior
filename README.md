@@ -7,7 +7,7 @@
 [Link do projeto no Figma](https://www.figma.com/file/1n0aifcfatWv9ozp16XCrq/DSCatalog-Bootcamp?node-id=1%3A2012)
 
 
-## Capítulo 1
+## Capítulo 1  Concluido!
 
 # Competências
 
@@ -33,6 +33,25 @@
 * Dados de auditoria
 * Paginação de dados
 * Associações entre entidades (N-N)
+  
+# Capítulo 2  Construindo...🛠️
+
+* Criar projeto no ReactJS
+* Entender os conceitos iniciais do ReactJS
+* Props
+* Componentização
+* Estado
+* Ciclo de vida
+* TypeScript
+* Conceitos iniciais
+* TypeScript & ReactJS
+* Organizar o projeto ReactJS
+* Estrutura de pastas mais “profissional”
+* Nomenclaturas de pastas
+* Navegação entre rotas da aplicação
+* Extrair características do Figma para um componente ReactJS
+* Configurar o Bootstrap para acelerar o desenvolvimento dos componentes
+
 
 
 
