@@ -1,5 +1,7 @@
 package com.devsuperior.dscatalog.repositories;
 
+// camada de acesso a dados
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

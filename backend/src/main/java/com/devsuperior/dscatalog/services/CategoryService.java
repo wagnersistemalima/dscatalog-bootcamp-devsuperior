@@ -60,7 +60,7 @@ public class CategoryService {
 		
 	}
  
-	public void delete(Long id) {                        // metodo para deletar um recurso
+	public void delete(Long id) {     // metodo para deletar um recurso 
 		try {
 			repository.deleteById(id);
 		}

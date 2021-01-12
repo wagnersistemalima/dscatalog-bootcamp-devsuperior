@@ -26,7 +26,7 @@ public class Category implements Serializable{
 	private Instant createdAt; // atributo para armezenar o instante que o registro foi criado pela primeira vez
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-	private Instant updateddAt; // atributo para armezenar o instante que o registro foi criado pela primeira vez
+	private Instant updateddAt; // atributo para armezenar o instante que o registro foi atualizado
 	
 	public Category() {
 		

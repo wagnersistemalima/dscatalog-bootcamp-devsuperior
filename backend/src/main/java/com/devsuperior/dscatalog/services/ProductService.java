@@ -1,5 +1,7 @@
 package com.devsuperior.dscatalog.services;
 
+// camada de serviço
+
 import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
@@ -24,11 +26,16 @@ import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
 @Service
 public class ProductService {
 	
+	// injeção de dependencia para a camada de acesso a dados de produtos
+	
 	@Autowired
 	private ProductRepository repository;
 	
+	// injeção de dependencia para a camada de acesso a dados das categorias
+	
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
 	
 	@Transactional(readOnly = true)      // busca paginada
 	public Page<ProductDTO> findAllPaged(PageRequest pageRequest) {  // metodo para buscar todas as categorias
@@ -38,14 +45,14 @@ public class ProductService {
 	}
 	
 	@Transactional(readOnly = true)
-	public ProductDTO findById(Long id) {    // metodo buscar uma categoria por id
+	public ProductDTO findById(Long id) {    // metodo buscar uma produto por id
 		Optional<Product> obj = repository.findById(id);
-		Product entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entidade não encontrada"));
+		Product entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
 		return new ProductDTO(entity, entity.getCategories());
 	}
 	
 	@Transactional
-	public ProductDTO insert(ProductDTO dto) {  // metodo inserir uma nova categoria
+	public ProductDTO insert(ProductDTO dto) {  // metodo inserir uma novo produto
 		Product entity = new Product();
 		copyDtoToEntity(dto, entity);
 		entity = repository.save(entity);
@@ -76,7 +83,9 @@ public class ProductService {
 		catch (DataIntegrityViolationException e) {
 			throw new DatabaseException("Violação de integridade");
 		}
-	}                                                           
+	}       
+	
+	// metodo auxiliar  para receber dados do dto
 	
 	private void copyDtoToEntity(ProductDTO dto, Product entity) {
 		

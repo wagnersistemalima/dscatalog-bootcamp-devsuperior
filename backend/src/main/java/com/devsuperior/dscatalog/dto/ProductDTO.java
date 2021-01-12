@@ -12,6 +12,9 @@ import com.devsuperior.dscatalog.entities.Product;
 public class ProductDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	
+	// atributos basico
+	
 	private Long id;
 	private String name;
 	private String description;
@@ -19,11 +22,17 @@ public class ProductDTO implements Serializable{
 	private String imgUrl;
 	private Instant date;
 	
+	// ProductDTO vai aceitar uma lista de categorias
+	
 	private List<CategoryDTO> categories = new ArrayList<>();
+	
+	// construtor default
 	
 	public ProductDTO() {
 		
 	}
+	
+	// construtor com argumentos
 
 	public ProductDTO(Long id, String name, String description, Double price, String imgUrl, Instant date) {
 		this.id = id;
@@ -34,6 +43,8 @@ public class ProductDTO implements Serializable{
 		this.date = date;
 	}
 	
+	// construtor recebendo uma entidade para povoar o dto
+	
 	public ProductDTO(Product entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();
@@ -42,6 +53,8 @@ public class ProductDTO implements Serializable{
 		this.imgUrl = entity.getImgUrl();
 		this.date = entity.getDate();
 	}
+	
+	// construtor recebendo as categorias e colocando os elementos 
 	
 	public ProductDTO(Product entity, Set<Category> categories) {
 		this(entity);

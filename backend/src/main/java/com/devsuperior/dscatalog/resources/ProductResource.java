@@ -26,10 +26,12 @@ import com.devsuperior.dscatalog.services.ProductService;
 public class ProductResource {
 	// controladores Rest
 	
+	// injeção de dependencia para a camada de serviço
+	
 	@Autowired
 	private ProductService service;
 	
-	// encapsular uma resposta http/ metodo para buscar todas as categorias
+	// metodo para buscar todos os produtos paginado/ resposta 200 ok
 	@GetMapping
 	public ResponseEntity<Page<ProductDTO>> findAll(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -45,14 +47,14 @@ public class ProductResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	// encapsular uma resposta http/ buscar uma categoria por id / 
+	// metodo para buscar produto por id / resposta 200 ok 
 	@GetMapping(value = "/{id}")                         
 	public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {  
 		ProductDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
 	
-	// encapsular uma resposta http/  inserir uma nova categoria / responder no cabeçario da resposta o recurso
+	// metodo para inserir uma novo produto / resposta 201 created
 	@PostMapping                          
 	public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto) { 
 		dto = service.insert(dto);
@@ -60,14 +62,14 @@ public class ProductResource {
 		return ResponseEntity.created(uri).body(dto);
 	}
 	
-	// encapsular uma resposta http/ atualizar um recurso /  responder no cabeçario da resposta o recurso
+	// metodo para atualizar um produto /  resposta 200 ok
 	@PutMapping(value = "/{id}")                           
 	public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO dto) { 
 		dto = service.update(id, dto);
 		return ResponseEntity.ok().body(dto);
 	}
 	
-	// encapsular uma resposta http/ deletar um recurso / responder no cabeçario da resposta o recurso
+	// metodo para deletar um produto / resposta 204 No content
 	@DeleteMapping(value = "/{id}")                           
 	public ResponseEntity<ProductDTO> delete(@PathVariable Long id) { 
 		service.delete(id);
