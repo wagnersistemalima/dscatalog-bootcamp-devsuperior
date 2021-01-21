@@ -1,0 +1,48 @@
+.pagination-container {
+    display: flex;           // faz com que os elementos fiquem alinhados um ao lado do outro
+    justify-content: center;
+    margin-top: 35px;
+    align-items: center;
+}
+
+.pagination-item {
+    width: 40px;
+    height: 40px;
+    background:#E1E1E1;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.015em;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+
+    &.active {
+        background: #407BFF;
+    }
+}
+
+.pagination-previous {
+    transform: rotate(-180deg);
+    margin-right: 25px;
+    color: #E1E1E1;
+}
+
+.pagination-next {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.page-active {
+    cursor: pointer;
+    color: #407BFF;
+}
+
+.page-inactive {
+    color: #E1E1E1;
+    pointer-events: none;
+}

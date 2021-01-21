@@ -1,3 +1,4 @@
+import Pagination from 'core/components/Pagination';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ProductResponse } from '../../core/types/Products';
@@ -19,13 +20,13 @@ const Catalog = () => {
     // status
     const [isLoading, setIsLoading] = useState(false)
 
-    console.log(productsResponse);
-
     // Quando o componente iniciar, buscar a lista de produtos
+
+    const [activePage, setActivePage] = useState(0)   // estado repres pagina ativa 0 inicial
 
     useEffect(() => {
         const params = {
-            page: 0,
+            page: activePage,
             linesPerPage: 12
         }
 
@@ -38,7 +39,7 @@ const Catalog = () => {
             setIsLoading(false);
         })
 
-    }, []);
+    }, [activePage]);
 
     return (
         <div className="catalog-container">
@@ -57,8 +58,16 @@ const Catalog = () => {
                 )}
                 
             </div>
+            {productsResponse && (
+            <Pagination
+                totalPages = {productsResponse?.totalPages}
+                activePage = {activePage}
+                onChange = {page => setActivePage(page)}
+            />
+        )}
+
         </div>
-       
+        
     );
 }
 
