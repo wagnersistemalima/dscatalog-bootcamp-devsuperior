@@ -7,26 +7,26 @@ const Navbar = () => {
         <nav className="row bg-primary main-nav">
             <div className="col-2">
                 <Link to="/" className="nav-logo-text">
-                    <h4>DS Catalog</h4>
+                    <h4>Minha Loja Virtual</h4>
                 </Link>
             </div>
 
             <div className="col-6 offset-2">
                 <ul className="main-menu">
                     <li>
-                        <NavLink to="/" activeClassName="active" exact>
+                        <NavLink to="/"  exact>
                             HOME
                         </NavLink> 
                     </li>
 
                     <li>
-                        <NavLink to="/products" activeClassName="active">
+                        <NavLink to="/products" >
                             CATÁLOGO
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/admin" activeClassName="active">
+                        <NavLink to="/admin" >
                             ADMIN
                         </NavLink>
                     </li>
