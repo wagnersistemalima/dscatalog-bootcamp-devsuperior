@@ -34,7 +34,7 @@
 * Paginação de dados
 * Associações entre entidades (N-N)
   
-# Capítulo 2  Construindo...🛠️
+# Capítulo 2  Concluido!
 
 * Criar projeto no ReactJS
 * Entender os conceitos iniciais do ReactJS
@@ -51,6 +51,49 @@
 * Navegação entre rotas da aplicação
 * Extrair características do Figma para um componente ReactJS
 * Configurar o Bootstrap para acelerar o desenvolvimento dos componentes
+
+# Capítulo 3  Concluido!
+
+## Competências:
+
+* Integrando a listagem de produtos com o backend
+* Criando Proxy local para acessar o backend
+* Criando estrutura reutilizável para fazer requisições HTTP com a biblioteca Axios
+* Integrando os detalhes do produto com o backend
+* Adicionando loaders na aplicação
+* Melhorando a estrutura de imports da aplicação
+* Criando paginação genérica
+* Criando rotas avançadas com o React Router
+* Lidando com formulários no ReactJS
+* Criando estrutura para o cadastro de um produto
+* Entendendo o conceito de uma aplicação responsiva
+* Aplicando responsividade nas páginas Home, Catálogo e Detalhes do produto
+
+
+
+# Capítulo 4 segunda parte backend,  Construindo...🛠️
+
+## Competências
+
+* Validação com Bean Validation
+* Annotations
+* Customizando a resposta HTTP
+* Validações personalizadas com acesso a banco
+* Perfis de projeto (test, dev, prod)
+* Implantação no Heroku com entrega contínua
+* Autenticação e autorização
+* Spring Security
+* OAuth 2.0
+* Token JWT
+* Autorização de rotas por perfil
+* Dicas para Postman
+* Configuração de CORS
+* Geração de documentação de API com Swagger
+* Consultas JPQL
+* Upload de arquivos para Amazon S3
+
+## Arquivo pom.xml atualizado para Spring Boot 2.4.1
+
 
 
 
