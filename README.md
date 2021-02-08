@@ -6,8 +6,12 @@
 
 [Link do projeto no Figma](https://www.figma.com/file/1n0aifcfatWv9ozp16XCrq/DSCatalog-Bootcamp?node-id=1%3A2012)
 
+## modelo conceitual
 
-## Capítulo 1  Concluido!
+![alt-text](https://github.com/wagnersistemalima/dscatalog-bootcamp-devsuperior/blob/master/image/modelo-conceitual-dscatalog.jpg)
+
+
+## Capítulo 1  Backend Concluido!
 
 # Competências
 
@@ -75,17 +79,24 @@
 
 ## Competências
 
-* Validação com Bean Validation
+## Validação com Bean Validation
+
 * Annotations
 * Customizando a resposta HTTP
 * Validações personalizadas com acesso a banco
+
 * Perfis de projeto (test, dev, prod)
 * Implantação no Heroku com entrega contínua
-* Autenticação e autorização
+
+## Autenticação e autorização
+
 * Spring Security
 * OAuth 2.0
 * Token JWT
 * Autorização de rotas por perfil
+
+![alt-text](https://github.com/wagnersistemalima/dscatalog-bootcamp-devsuperior/blob/master/image/outh-image.jpg)
+
 * Dicas para Postman
 * Configuração de CORS
 * Geração de documentação de API com Swagger
