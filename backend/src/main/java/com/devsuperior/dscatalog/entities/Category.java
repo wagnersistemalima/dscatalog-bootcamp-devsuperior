@@ -2,12 +2,15 @@ package com.devsuperior.dscatalog.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -15,6 +18,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable{
+	
+	// SerialIzable para o objeto ser transformado em bytes
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -28,14 +34,25 @@ public class Category implements Serializable{
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant updateddAt; // atributo para armezenar o instante que o registro foi atualizado
 	
+	// associação bi direcional / uma categoria contem varios produtos / um para muitos
+	
+	@ManyToMany(mappedBy = "categories")
+	private Set<Product> products = new HashSet<>();
+	
+	// construtor default
+	
 	public Category() {
 		
 	}
+	
+	// construtor com argumento
 
 	public Category(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
+	
+	// Getters $ setters
 
 	public Long getId() {
 		return id;
@@ -61,6 +78,11 @@ public class Category implements Serializable{
 		return updateddAt;
 	}
 	
+	@ManyToMany(mappedBy = "categories")
+	public Set<Product> getProducts() {
+		return products;
+	}
+
 	//metodo auxiliar para sempre que for salvar uma categoria, o metodo armazana no createdAt o instante atual
 	@PrePersist
 	public void prePersist() {
@@ -72,6 +94,8 @@ public class Category implements Serializable{
 	public void preUpdate() {
 		updateddAt = Instant.now();
 	}
+	
+	// HashCode & equals
 
 	@Override
 	public int hashCode() {

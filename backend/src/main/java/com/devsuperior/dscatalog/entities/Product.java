@@ -19,6 +19,8 @@ import javax.persistence.Table;
 @Table(name = "tb_product")
 public class Product implements Serializable{
 	
+	// SerialIzable para o objeto ser transformado em bytes
+	
 	private static final long serialVersionUID = 1L;
 	
 	// atributos basico
@@ -37,7 +39,7 @@ public class Product implements Serializable{
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant date;
 	
-	// associação / um produto tem varias categorias
+	// associação bi direcional / um produto tem varias categorias / um para muitos
 	
 	@ManyToMany
 	@JoinTable(name = "tb_product_category", 
