@@ -38,7 +38,7 @@
 * Paginação de dados
 * Associações entre entidades (N-N)
   
-# Capítulo 2  Concluido!
+# Capítulo 2 Front-end Concluido!
 
 * Criar projeto no ReactJS
 * Entender os conceitos iniciais do ReactJS
@@ -56,7 +56,7 @@
 * Extrair características do Figma para um componente ReactJS
 * Configurar o Bootstrap para acelerar o desenvolvimento dos componentes
 
-# Capítulo 3  Concluido!
+# Capítulo 3  Front-end Concluido!
 
 ## Competências:
 
