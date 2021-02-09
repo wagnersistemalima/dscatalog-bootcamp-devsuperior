@@ -18,11 +18,8 @@ public class UserDTO implements Serializable{
 	// atributos basico
 	
 	private Long id;
-	
 	private String firstName;
-	
 	private String lastName;
-	
 	private String email;
 	
 	// UserDTO vai transportar uma lista de Role/ perfil
