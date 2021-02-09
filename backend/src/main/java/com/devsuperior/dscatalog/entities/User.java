@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -40,7 +41,8 @@ public class User implements Serializable{
 	
 	// associação / um usuario pode ter varios perfis / um para muitos
 	
-	@ManyToMany
+	
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_user_role", 
 	joinColumns = @JoinColumn(name = "user_id"),
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -55,7 +57,6 @@ public class User implements Serializable{
 	// construtor com argumentos
 
 	public User(Long id, String firstName, String lastName, String email, String password) {
-		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -105,12 +106,13 @@ public class User implements Serializable{
 		this.password = password;
 	}
 	
-	
-	// HashCode & equals
-
 	public Set<Role> getRoles() {
 		return roles;
 	}
+	
+	// HashCode & equals
+
+	
 
 	@Override
 	public int hashCode() {

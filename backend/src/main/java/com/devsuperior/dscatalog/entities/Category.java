@@ -78,7 +78,7 @@ public class Category implements Serializable{
 		return updateddAt;
 	}
 	
-	@ManyToMany(mappedBy = "categories")
+	
 	public Set<Product> getProducts() {
 		return products;
 	}
