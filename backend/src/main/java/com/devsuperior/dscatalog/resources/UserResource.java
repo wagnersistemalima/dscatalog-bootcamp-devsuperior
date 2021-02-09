@@ -63,7 +63,7 @@ public class UserResource {
 		return ResponseEntity.created(uri).body(newDto);
 	}
 	
-	// metodo para usuario um produto /  resposta 200 ok
+	// metodo para atualizar um usuario /  resposta 200 ok
 	@PutMapping(value = "/{id}")                           
 	public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody UserDTO dto) { 
 		dto = service.update(id, dto);

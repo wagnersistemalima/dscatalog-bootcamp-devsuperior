@@ -30,6 +30,7 @@ public class UserService {
 	
 	// injetar um objeto BCrypt para transformar a senha e um codigo 
 	
+	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 	
 	// injeção de dependencia para a camada de acesso a dados User
