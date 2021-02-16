@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 import com.devsuperior.dscatalog.entities.User;
 
 // objeto para trafegar os dados da aplicação para o controller
@@ -18,11 +21,15 @@ public class UserDTO implements Serializable{
 	// atributos basico
 	
 	private Long id;
+	
+	@NotBlank(message = "Campo obrigatório")
 	private String firstName;
 	private String lastName;
+	
+	@Email(message = "Favor entrar com um email válido")
 	private String email;
 	
-	// UserDTO vai transportar uma lista de Role/ perfil
+	// UserDTO vai transportar uma lista de usuarios e suas permissoes/ Admin, Operador
 	
 	private Set<RoleDTO> roles = new HashSet<>();
  	

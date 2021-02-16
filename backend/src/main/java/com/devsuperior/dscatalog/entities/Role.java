@@ -10,7 +10,6 @@ import javax.persistence.Table;
 
 // Entidade
 
-
 @Entity
 @Table(name = "tb_role")
 public class Role implements Serializable{
@@ -24,6 +23,8 @@ public class Role implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	// Tipo: operador ou admin
 	
 	private String authority;
 	

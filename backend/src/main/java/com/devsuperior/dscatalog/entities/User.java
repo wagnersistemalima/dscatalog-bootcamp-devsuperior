@@ -20,20 +20,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
-public class User implements Serializable{
-	
-	// para que o objeto seja transformado em bytes
-	
+public class User implements Serializable{	
+	// para que o objeto seja transformado em bytes	
 	private static final long serialVersionUID = 1L;
 
 	// atributos basico
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String firstName;
-	
+	private Long id;	
+	private String firstName;	
 	private String lastName;
 	
 	@Column(unique = true)
@@ -41,8 +37,7 @@ public class User implements Serializable{
 	
 	private String password;
 	
-	// associação / um usuario pode ter varios perfis / um para muitos
-	
+	// associação / um usuario pode ter varios perfis / um ou muitos
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_user_role", 
