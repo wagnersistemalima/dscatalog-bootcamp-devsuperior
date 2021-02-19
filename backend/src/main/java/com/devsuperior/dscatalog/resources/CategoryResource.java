@@ -45,14 +45,14 @@ public class CategoryResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	// encapsular uma resposta http/ buscar uma categoria por id / 
+	// encapsular uma resposta http/ buscar uma categoria por id / resposta 200 ok
 	@GetMapping(value = "/{id}")                         
 	public ResponseEntity<CategoryDTO> findById(@PathVariable Long id) {  
 		CategoryDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
 	
-	// encapsular uma resposta http/  inserir uma nova categoria / responder no cabeçario da resposta o recurso
+	// encapsular uma resposta http/  inserir uma nova categoria / responder no cabeçario da resposta o recurso / resposta 201 created
 	@PostMapping                          
 	public ResponseEntity<CategoryDTO> insert(@RequestBody CategoryDTO dto) { 
 		dto = service.insert(dto);
@@ -60,14 +60,14 @@ public class CategoryResource {
 		return ResponseEntity.created(uri).body(dto);
 	}
 	
-	// encapsular uma resposta http/ atualizar um recurso /  responder no cabeçario da resposta o recurso
+	// encapsular uma resposta http/ atualizar um recurso /  responder no cabeçario da resposta o recurso/ resposta 200 ok
 	@PutMapping(value = "/{id}")                           
 	public ResponseEntity<CategoryDTO> update(@PathVariable Long id, @RequestBody CategoryDTO dto) { 
 		dto = service.update(id, dto);
 		return ResponseEntity.ok().body(dto);
 	}
 	
-	// encapsular uma resposta http/ deletar um recurso / responder no cabeçario da resposta o recurso
+	// encapsular uma resposta http/ deletar um recurso / responder no cabeçario da resposta o recurso/ 204 no content
 	@DeleteMapping(value = "/{id}")                           
 	public ResponseEntity<CategoryDTO> delete(@PathVariable Long id) { 
 		service.delete(id);

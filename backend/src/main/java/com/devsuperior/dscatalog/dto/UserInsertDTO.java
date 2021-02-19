@@ -1,8 +1,11 @@
 package com.devsuperior.dscatalog.dto;
 
+import com.devsuperior.dscatalog.services.validation.UserInsertValid;
+
 // objeto simples para transportar dados, utilizando herança, e resolvendo o transporte de senhas
 // apenas na inserção de dados
 
+@UserInsertValid
 public class UserInsertDTO extends UserDTO{
 	
 	// SerialIzable para transformar o objeto em bytes
